@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.effect.GaussianBlur?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: grey;" styleClass="vbox" stylesheets="@../style.css" xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" prefHeight="433.0" prefWidth="800.0" scaleShape="false" snapToPixel="false" styleClass="anchor-pane">
+         <children>
+            <TextArea id="text-area" fx:id="textArea" editable="false" layoutX="357.0" layoutY="240.0" prefHeight="149.0" prefWidth="407.0">
+               <font>
+                  <Font size="16.0" />
+               </font></TextArea>
+            <MenuButton layoutX="46.0" layoutY="17.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="126.0" text="null" fx:id="xMenu">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#xTrueClick" text="True" fx:id="xTrue" />
+                  <MenuItem mnemonicParsing="false" onAction="#xFalseClick" text="False" fx:id="xFalse" />
+                <MenuItem mnemonicParsing="false" onAction="#xNaNClick" text="null" fx:id="xNaN" />
+              </items>
+            </MenuButton>
+            <MenuButton fx:id="yMenu" layoutX="46.0" layoutY="60.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="126.0" text="null" textAlignment="CENTER">
+              <items>
+                <MenuItem fx:id="yTrue" mnemonicParsing="false" onAction="#yTrueClick" text="True" />
+                  <MenuItem fx:id="yFalse" mnemonicParsing="false" onAction="#yFalseClick" text="False" />
+                <MenuItem fx:id="yNaN" mnemonicParsing="false" onAction="#yNaNClick" text="null" />
+              </items>
+            </MenuButton>
+            <Button fx:id="f0Button" layoutX="216.0" layoutY="17.0" mnemonicParsing="false" onAction="#f0ButtonClick" prefHeight="33.0" prefWidth="190.0" text="F0 : FALSE (Instant 0)" />
+            <Button fx:id="f1Button" layoutX="410.0" layoutY="17.0" mnemonicParsing="false" onAction="#f1ButtonClick" onMouseClicked="#f1ButtonClick" prefHeight="33.0" prefWidth="190.0" text="F1 : AND (Conjunction)" />
+            <Button fx:id="f2Button" layoutX="604.0" layoutY="17.0" mnemonicParsing="false" onAction="#f2ButtonClick" prefHeight="33.0" prefWidth="190.0" text="F2 : Inhibition (X/Y)" />
+            <Button fx:id="f3Button" layoutX="216.0" layoutY="53.0" mnemonicParsing="false" onAction="#f3ButtonClick" prefHeight="33.0" prefWidth="190.0" text="F3 : Transfer X" />
+            <Button fx:id="f4Button" layoutX="410.0" layoutY="53.0" mnemonicParsing="false" onAction="#f4ButtonClick" prefHeight="33.0" prefWidth="190.0" text="F4 : Inhibition (Y/X)" />
+            <Button fx:id="f5Button" layoutX="604.0" layoutY="53.0" mnemonicParsing="false" onAction="#f5ButtonClick" prefHeight="33.0" prefWidth="190.0" text="F5 : Transfer Y" />
+            <Button fx:id="f6Button" layoutX="216.0" layoutY="89.0" mnemonicParsing="false" onAction="#f6ButtonClick" prefHeight="33.0" prefWidth="190.0" text="F6 : XOR" />
+            <Button fx:id="f7Button" layoutX="410.0" layoutY="89.0" mnemonicParsing="false" onAction="#f7ButtonClick" prefHeight="33.0" prefWidth="190.0" text="F7 : OR (Disjunction)" />
+            <Button fx:id="f8Button" layoutX="604.0" layoutY="89.0" mnemonicParsing="false" onAction="#f8ButtonClick" prefHeight="33.0" prefWidth="190.0" text="F8 : NOR (↓)" />
+            <Button fx:id="f9Button" layoutX="216.0" layoutY="125.0" mnemonicParsing="false" onAction="#f9ButtonClick" prefHeight="33.0" prefWidth="190.0" text="F9 : Equivalence (↔)" />
+            <Button fx:id="f10Button" layoutX="410.0" layoutY="125.0" mnemonicParsing="false" onAction="#f10ButtonClick" prefHeight="33.0" prefWidth="190.0" text="F10 : Compl. (Not Y)" />
+            <Button fx:id="f11Button" layoutX="604.0" layoutY="125.0" mnemonicParsing="false" onAction="#f11ButtonClick" prefHeight="33.0" prefWidth="190.0" text="F11 : Anti-Implication (←)" />
+            <Button fx:id="f12Button" layoutX="216.0" layoutY="162.0" mnemonicParsing="false" onAction="#f12ButtonClick" prefHeight="33.0" prefWidth="190.0" text="F12 : Compl. (Not X)" />
+            <Button fx:id="f13Button" layoutX="410.0" layoutY="162.0" mnemonicParsing="false" onAction="#f13ButtonClick" prefHeight="33.0" prefWidth="190.0" text="F13 : Implication (→)" />
+            <Button fx:id="f14Button" layoutX="604.0" layoutY="162.0" mnemonicParsing="false" onAction="#f14ButtonClick" prefHeight="33.0" prefWidth="190.0" text="F14 : NAND (↑)" />
+            <Button fx:id="f15Button" layoutX="410.0" layoutY="199.0" mnemonicParsing="false" onAction="#f15ButtonClick" prefHeight="33.0" prefWidth="190.0" text="F15 : TRUE (Instant 1)" />
+             <ImageView fx:id="hint2ImageBig" fitHeight="433.0" fitWidth="800.0" layoutX="2.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                 <image>
+                     <Image url="@../functions4.png" />
+                 </image>
+             </ImageView>
+             <ImageView fx:id="hint1ImageBig" fitHeight="239.0" fitWidth="800.0" layoutX="2.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                 <image>
+                     <Image url="@../functions5.png" />
+                 </image>
+             </ImageView>
+             <ImageView fx:id="hint1ImageSmall" fitHeight="90.0" fitWidth="311.0" layoutX="25.0" layoutY="270.0" pickOnBounds="true" preserveRatio="true">
+                 <image>
+                     <Image url="@../functions5.png" />
+                 </image>
+                 <effect>
+                     <GaussianBlur radius="1.5" />
+                 </effect>
+             </ImageView>
+            <Label layoutX="14.0" layoutY="29.0" text="X = " />
+            <Label layoutX="14.0" layoutY="72.0" text="Y = " />
+         </children>
+      </AnchorPane>
+   </children>
+</VBox>
